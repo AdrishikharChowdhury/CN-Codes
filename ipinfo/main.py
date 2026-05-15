@@ -17,12 +17,8 @@ class IP:
             return 16
         elif ipPrefix in range(192, 224):
             return 24
-        elif ipPrefix in range(224, 240):
-            return None
-        elif ipPrefix in range(240, 256):
-            return None
         else:
-            print("Invalid IP Adress")
+            return None
 
     def _typeOfANetwork(self):
         try:
@@ -44,15 +40,15 @@ class IP:
 
     def _ipRangeFind(self):
         if self.network_type == "Class A":
-            return "0.0.0.0", "127.255.255.255"
+            return ("0.0.0.0", "127.255.255.255")
         elif self.network_type == "Class B":
-            return "128.0.0.0", "191.255.255.255"
+            return ("128.0.0.0", "191.255.255.255")
         elif self.network_type == "Class C":
-            return "192.0.0.0", "223.255.255.255"
+            return ("192.0.0.0", "223.255.255.255")
         elif self.network_type == "Class D":
-            return "224.0.0.0", "239.255.255.255"
+            return ("224.0.0.0", "239.255.255.255")
         elif self.network_type == "Class E":
-            return "240.0.0.0", "254.255.255.255"
+            return ("240.0.0.0", "254.255.255.255")
         else:
             return ("", "")
 
@@ -66,8 +62,6 @@ class IP:
             return "255.255.255.0"
         elif ipPrefix in range(224, 240):
             return "255.255.255.255"
-        elif ipPrefix in range(240, 256):
-            return "N/A"
         else:
             return "N/A"
 
