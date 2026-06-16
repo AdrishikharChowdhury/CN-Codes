@@ -40,12 +40,6 @@ def encodeData(data, key):
     codeword = data + remainder
     return codeword
 
-def decodeData(data, key):
-    if mod2div(data, key) == 0:
-        return 1
-    else:
-        return 0
-
 
 if __name__ == "__main__":
     data = input(" Message (binary): ")
